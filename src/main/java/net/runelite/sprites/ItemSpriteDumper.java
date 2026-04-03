@@ -105,7 +105,7 @@ public class ItemSpriteDumper
 		try (InputStream is = new URL(OPENRS2_CACHES_URL).openStream();
 			InputStreamReader reader = new InputStreamReader(is))
 		{
-			JsonArray caches = JsonParser.parseReader(reader).getAsJsonArray();
+			JsonArray caches = new JsonParser().parse(reader).getAsJsonArray();
 
 			int latestId = -1;
 			String latestTimestamp = "";
