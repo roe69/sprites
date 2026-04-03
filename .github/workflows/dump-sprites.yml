@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Dump item sprites
-        run: ./gradlew run
+        run: |
+          chmod +x ./gradlew
+          ./gradlew run
 
       - name: Commit changes
         run: |
